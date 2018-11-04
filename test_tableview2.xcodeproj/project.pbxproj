@@ -14,6 +14,8 @@
 		16B3F041218D920600778B19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 16B3F03F218D920600778B19 /* LaunchScreen.storyboard */; };
 		16B3F04C218D920600778B19 /* test_tableview2Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B3F04B218D920600778B19 /* test_tableview2Tests.swift */; };
 		16B3F057218D920600778B19 /* test_tableview2UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B3F056218D920600778B19 /* test_tableview2UITests.swift */; };
+		16B3F065218D921400778B19 /* Fakedata.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B3F064218D921400778B19 /* Fakedata.swift */; };
+		16B3F067218D933F00778B19 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B3F066218D933F00778B19 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		16B3F052218D920600778B19 /* test_tableview2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = test_tableview2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		16B3F056218D920600778B19 /* test_tableview2UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = test_tableview2UITests.swift; sourceTree = "<group>"; };
 		16B3F058218D920600778B19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		16B3F064218D921400778B19 /* Fakedata.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fakedata.swift; sourceTree = "<group>"; };
+		16B3F066218D933F00778B19 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,9 +104,11 @@
 				16B3F036218D920500778B19 /* AppDelegate.swift */,
 				16B3F038218D920500778B19 /* ViewController.swift */,
 				16B3F03A218D920500778B19 /* Main.storyboard */,
+				16B3F064218D921400778B19 /* Fakedata.swift */,
 				16B3F03D218D920600778B19 /* Assets.xcassets */,
 				16B3F03F218D920600778B19 /* LaunchScreen.storyboard */,
 				16B3F042218D920600778B19 /* Info.plist */,
+				16B3F066218D933F00778B19 /* TableViewController.swift */,
 			);
 			path = test_tableview2;
 			sourceTree = "<group>";
@@ -258,6 +264,8 @@
 			files = (
 				16B3F039218D920500778B19 /* ViewController.swift in Sources */,
 				16B3F037218D920500778B19 /* AppDelegate.swift in Sources */,
+				16B3F065218D921400778B19 /* Fakedata.swift in Sources */,
+				16B3F067218D933F00778B19 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
