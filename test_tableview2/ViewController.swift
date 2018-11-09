@@ -12,13 +12,14 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var lblautore: UILabel!
    
-    var Libro = ""
+    var Libro:libro?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
-        lblautore.text = Libro
+        lblautore.text = Libro?.autore
     }
 
 

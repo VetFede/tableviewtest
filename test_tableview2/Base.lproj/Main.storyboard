@@ -53,9 +53,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="341" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="vai_dettaglio_libro" id="cM9-zA-Zqy"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -63,6 +60,9 @@
                             <outlet property="delegate" destination="AEF-cA-tf3" id="i3z-nS-ILd"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="vai_dettaglio_libro" id="uzp-TE-XZe"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zXw-jh-g6Z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

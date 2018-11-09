@@ -11,12 +11,12 @@ import UIKit
 class TableViewController: UITableViewController {
     
     var elencoLibri:[libro] = []
-    
+    var mylibreria = libreria()
 
     @IBOutlet weak var labella: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        var mylibreria = libreria()
+        
         elencoLibri = mylibreria.GetElencoLibri()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -42,7 +42,7 @@ class TableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
         cell.textLabel?.text =  elencoLibri[indexPath.row].titolo
-//
+       
 
         return cell
     }
@@ -51,20 +51,24 @@ class TableViewController: UITableViewController {
   override  func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
     
-    let oggettodapassare = libro(titolo:"uno",autore:"due")
+//   var libro2 = libro(titolo:"libro2",autore:"pippo")
+   var libroselezionato = elencoLibri[indexPath.row]
     
     
+        performSegue(withIdentifier: "vai_dettaglio_libro", sender: libroselezionato
+    )
     
-        performSegue(withIdentifier: "vai_dettaglio_libro", sender: oggettodapassare)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "vai_dettaglio_libro"{
             let vc = segue.destination as! ViewController
-           
-          let ibro = sender as! libro
-           print(ibro.autore)
- vc.Libro = sender.
+//             var libro2 = libro(titolo:"libro2",autore:"pippo")
+            vc.Libro = sender as? libro
+            
+      
+          
+
 //
 //
         }
