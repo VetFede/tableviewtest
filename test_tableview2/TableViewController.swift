@@ -10,14 +10,17 @@ import UIKit
 
 class TableViewController: UITableViewController {
     
-    var elencoLibri:[libro] = []
-    var mylibreria = libreria()
+//    var elencoLibri:[libro] = []
+//    var mylibreria = libreria()
+    var elencoricette:[Recipe] = []
+    var myricettario = Ricettario()
 
     @IBOutlet weak var labella: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        elencoLibri = mylibreria.GetElencoLibri()
+        elencoricette = myricettario.GetRecipes()
+//        elencoLibri = mylibreria.GetElencoLibri()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -34,14 +37,14 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return elencoLibri.count
+        return elencoricette.count
     }
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        cell.textLabel?.text =  elencoLibri[indexPath.row].titolo
+        cell.textLabel?.text =  elencoricette[indexPath.row].title
        
 
         return cell
@@ -52,10 +55,10 @@ class TableViewController: UITableViewController {
     
     
 //   var libro2 = libro(titolo:"libro2",autore:"pippo")
-   var libroselezionato = elencoLibri[indexPath.row]
+   var ricettaselezionata = elencoricette[indexPath.row]
     
     
-        performSegue(withIdentifier: "vai_dettaglio_libro", sender: libroselezionato
+        performSegue(withIdentifier: "vai_dettaglio_libro", sender: ricettaselezionata
     )
     
     }
@@ -64,7 +67,7 @@ class TableViewController: UITableViewController {
         if segue.identifier == "vai_dettaglio_libro"{
             let vc = segue.destination as! ViewController
 //             var libro2 = libro(titolo:"libro2",autore:"pippo")
-            vc.Libro = sender as? libro
+            vc.recipe = sender as? Recipe
             
       
           
