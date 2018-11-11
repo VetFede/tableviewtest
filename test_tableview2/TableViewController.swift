@@ -8,18 +8,26 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController  {
     
 //    var elencoLibri:[libro] = []
 //    var mylibreria = libreria()
     var elencoricette:[Recipe] = []
     var myricettario = Ricettario()
-
-    @IBOutlet weak var labella: UILabel!
+    var filtered = [Recipe]()
+    @IBOutlet var searchBar: UITableView!
+   
     override func viewDidLoad() {
         super.viewDidLoad()
         
         elencoricette = myricettario.GetRecipes()
+        
+//        searchbar
+      
+//
+   filtered = elencoricette
+        
+        
 //        elencoLibri = mylibreria.GetElencoLibri()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -27,7 +35,13 @@ class TableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-
+    
+   
+// searchbar la imposto programmaticamente invece che fisicamente
+   
+    
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,6 +89,9 @@ class TableViewController: UITableViewController {
 //
 //
         }
+        
+        
+        
     }
    
 
@@ -123,4 +140,18 @@ class TableViewController: UITableViewController {
     }
     */
 
+}
+
+extension TableViewController:UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        filtered = searchText.isEmpty ? elencoricette : elencoricette.filter { $0.title!.contains(searchText) }
+        print(filtered.count)
+        
+    }
+    
+    
+    
+    
 }
