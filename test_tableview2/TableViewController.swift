@@ -15,8 +15,9 @@ class TableViewController: UITableViewController  {
     var elencoricette:[Recipe] = []
     var myricettario = Ricettario()
     var filtered = [Recipe]()
-    @IBOutlet var searchBar: UITableView!
+  
    
+    @IBOutlet var tableview: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,15 +52,28 @@ class TableViewController: UITableViewController  {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return elencoricette.count
+        if filtered.count != 0
+        {
+            return filtered.count
+        }
+        else{
+            return elencoricette.count
+        }
+        
     }
 
    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        cell.textLabel?.text =  elencoricette[indexPath.row].title
-       
+//        cell.textLabel?.text =  elencoricette[indexPath.row].title
+        if filtered.count != 0
+        {
+            cell.textLabel?.text = filtered[indexPath.row].title
+        }
+        else{
+            cell.textLabel?.text =  elencoricette[indexPath.row].title
+        }
 
         return cell
     }
@@ -147,8 +161,8 @@ extension TableViewController:UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         filtered = searchText.isEmpty ? elencoricette : elencoricette.filter { $0.title!.contains(searchText) }
-        print(filtered.count)
         
+        tableview.reloadData()
     }
     
     
